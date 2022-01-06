@@ -15,7 +15,19 @@ const Movie = () => {
     getMovies();
   }, []);
   console.log(movies);
-  return <div>영화</div>;
+  return (
+    <div>
+      {movies.map((movie) => (
+        <div key={movie.id}>
+          <img src={movie.medium_cover_image}></img>
+          <h1>{movie.title}</h1>
+          <p>{movie.raiting}</p>
+          <p>{movie.synopsis}</p>
+          <p>{movie.genres}</p>
+        </div>
+      ))}{" "}
+    </div>
+  );
 };
 
 export default Movie;
